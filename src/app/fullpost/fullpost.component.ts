@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class FullpostComponent implements OnInit {
 
   constructor() { }
-  
+  Name = "Author's name";
+  title = "Title of Posts";
   ngOnInit() {
   }
 
