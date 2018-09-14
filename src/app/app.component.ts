@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+<<<<<<< HEAD
   title = 'angular-cms';
   constructor(private http: Http) { }
    httpdata;
@@ -25,5 +26,8 @@ export class AppComponent {
     this.router.navigate(['./createpost.component.html']);
   
 };
+=======
+  title = 'Angular-CMS';
+>>>>>>> dad97ede2c21ffe484260b42d8d69dac54f8a20a
 }
 
