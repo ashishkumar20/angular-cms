@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { MatCardModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
 import { CreatepostComponent } from './createpost/createpost.component';
@@ -18,14 +17,14 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    CreatepostComponent
+    CreatepostComponent,
+    AllPostsComponent,
+    FullpostComponent
   ],
   imports: [
     BrowserModule,
     MatCardModule,
     HttpModule,
-    AllPostsComponent,
-    FullpostComponent,
     RouterModule.forRoot(
       appRoutes, { enableTracing: true }
     )

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ajax } from 'rxjs/ajax';
+import { map } from 'rxjs/operators';
+import{Http} from '@angular/http';
 @Component({
   selector: 'all-posts',
   templateUrl: './all-posts.component.html',
@@ -7,10 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllPostsComponent implements OnInit {
 
-  constructor() { }
-  Name: string = "Author Name";
-  posts: string[] = ["first", "second", "third", "fourth", "fifth"];
-  ngOnInit() {
-  }
-
+  constructor(private http: Http) { }
+   httpdata;
+   ngOnInit() {
+      this.http.get("https://jsonplaceholder.typicode.com/posts").
+      pipe(map((response) => response.json())).
+      subscribe(
+         (data) =>{this.displaydata(data);}
+      )
+   }
+   displaydata(data) {this.httpdata = data;}
 }
