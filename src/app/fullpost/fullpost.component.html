@@ -1,19 +1,18 @@
 <p>
   Fullpost works!
 </p>
-<div class="main">
-  <a style="float:left" href="./app.component.html">
+<form>
+  <a style="float:left" routerLink="/app-root" routerLinkActive="active">
     <b>&lArr;</b>
   </a>
-  <div class="name">
-    <h2>{{Name}}</h2>
-  </div>
-  <div class="nav">
-    <h1 style="float:left">{{title}}</h1>
-    <button style="float:right" onClick="showAllPosts()">All-Posts</button>
-  </div>
-  <div class = "post"></div>
-  <div class = "comments">
+    <div class="nav">
+      <h2>{{Name}}</h2>
+      <h1 >{{title}}</h1>
+      <button style="float:right" routerLink="/all-posts" routerLinkActive="active">All-Posts</button>
+    </div>
+      <p>Post Body</p>
+      <button>Comments</button>
 
-  </div>
-</div>
+
+
+</form>
