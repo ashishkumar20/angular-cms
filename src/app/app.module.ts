@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { DataService} from './data.service';
 import { MatCardModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
 import { CreatepostComponent } from './createpost/createpost.component';
@@ -35,7 +35,7 @@ const appRoutes: Routes = [
     )
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
