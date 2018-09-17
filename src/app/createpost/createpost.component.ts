@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-createpost',
+  selector: 'createpost',
   templateUrl: './createpost.component.html',
   styleUrls: ['./createpost.component.css']
 })

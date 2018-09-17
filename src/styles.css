@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+#header {
+    background: #FF3838;
+    padding: 20px 20px;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 10px 10px 0 0;
+ }

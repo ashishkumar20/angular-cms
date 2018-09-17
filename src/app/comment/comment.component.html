@@ -1,0 +1,18 @@
+<p *ngFor="let data of httpdata">
+{{data.id}} {{data.title}}
+</p>
+<div class="container">
+    <form>
+      <div class="row">
+        <div class="col-75">
+          <textarea id="post" name="post" placeholder="Write something.." style="height:200px"></textarea>
+        </div>
+      </div>
+      <div class="row">
+          <input type="submit" value="POST">
+        <input type="submit" value="CANCEL">
+      </div>
+    </form>
+    
+  </div>
+ 

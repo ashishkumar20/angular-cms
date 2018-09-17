@@ -1,0 +1,10 @@
+<!-- The content below is only a placeholder and can be replaced.-->
+
+<div id="main">
+  <button class="button button1" [routerLink]="['/createpost']">CREATE POST</button>
+  <button class="button button2" [routerLink]="['/app-allauthor']">ALL AUTHOR</button>
+</div>
+<mat-card *ngFor="let data of httpdata">
+  <h3 id="title" [routerLink]="['/fullpost']">{{data.id}} {{data.title}}</h3>
+  <p id="name">name</p>
+</mat-card>
