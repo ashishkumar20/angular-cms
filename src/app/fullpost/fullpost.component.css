@@ -12,8 +12,14 @@ input[type=text], select, textarea {
 }
 
 label {
-    padding: 12px 12px 12px 0;
+    font-family: "Times New Roman", Times, serif;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
     display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+     
     
 }
 
@@ -53,7 +59,7 @@ input[type=submit]:hover {
     width: 25%;
     margin-top: 6px;
     font-family: "Times New Roman", Times, serif;
-    color:#FF3838;
+    
 }
 
 .col-75 {
@@ -104,9 +110,6 @@ input[type=submit]:hover {
 }
 #posttitle
 {
-    background-color: #FF3838;
-    border: none;
-    color:#f2f2f2;
     font-family: "Times New Roman", Times, serif;
     padding: 15px 32px;
     text-align: center;

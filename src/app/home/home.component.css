@@ -1,7 +1,4 @@
-#main
-{
-    background-color: #FF3838;
-}
+
  .button {
     background-color: #e7e7e7;/* Green */
     border: none;
@@ -36,9 +33,21 @@
 }
 #title
 {
-    color: #FF3838;
+    
+    text-transform: uppercase;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 15px;
 }
 mat-card
 {
     cursor: pointer;
+    width: 50%;
+    margin: auto;
+    margin-top: -20px;
+}
+
+#main
+{
+    background: #FF3838;
+    
 }

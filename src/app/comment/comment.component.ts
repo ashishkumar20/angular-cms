@@ -12,7 +12,7 @@ export class CommentComponent implements OnInit {
   constructor(private http: Http) { }
   httpdata;
   ngOnInit() {
-    this.http.get("https://jsonplaceholder.typicode.com/posts").
+    this.http.get("https://jsonplaceholder.typicode.com/comments").
       pipe(map((response) => response.json())).
       subscribe(
         (data) => { this.displaydata(data); }

@@ -46,6 +46,9 @@ input[type=submit]:hover {
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 20px;
+    position: fixed; 
+    bottom: 0px;
+    width: 100%;
 }
 
 .col-25 {
@@ -102,25 +105,7 @@ input[type=submit]:hover {
 {
    float: right;
 }
-#posttitle
+mat-card
 {
-    background-color: #FF3838;
-    border: none;
-    color:#f2f2f2;
-    font-family: "Times New Roman", Times, serif;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-     
-}
-#name
-{
-    color:black;
-}
-#main
-{
-    background-color: #FF3838;
+    text-transform:capitalize;
 }
