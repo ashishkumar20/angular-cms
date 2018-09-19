@@ -1,18 +1,25 @@
-<p>
-  Fullpost works!
-</p>
-<form>
-  <a style="float:left" [routerLink]="['/app-home']" routerLinkActive="active">
-    <b>&lArr;</b>
-  </a>
-    <div class="nav">
-      <h2>{{Name}}</h2>
-      <h1 >{{title}}</h1>
-      <button style="float:right" [routerLink]="['/all-posts']" routerLinkActive="active">All-Posts</button>
+<a [routerLink]="['/app-home']" routerLinkActive="active">
+  <b>&lArr;</b>
+</a>
+ 
+<div>   
+<h2 id="name">Author Name</h2>
+  <form>
+    <div class="row">
+      <label id="posttitle">POST TITLE</label>
+      <button class="button button2" [routerLink]="['/all-posts']">ALL POST</button>
     </div>
-      <p>Post Body</p>
-      <button>Comments</button>
-
-
-
-</form>
+    <div class="row">
+      <div class="col-25">
+        <label for="post">Post</label>
+      </div>
+      <div class="col-75">
+        <label id="post" name="post" style="height:200px">Hiiiii</label>
+      </div>
+    </div>
+    <div class="row">
+      <input type="submit" value="COMMENT" routerLink="/comment">
+    </div>
+  </form>
+  <router-outlet></router-outlet>
+</div>

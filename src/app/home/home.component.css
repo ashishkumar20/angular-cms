@@ -1,10 +1,7 @@
-#header {
-    background: #FF3838;
-    padding: 20px 20px;
-    font-size: 1.2em;
-    font-weight: 600;
-    border-radius: 10px 10px 0 0;
- }
+#main
+{
+    background-color: #FF3838;
+}
  .button {
     background-color: #e7e7e7;/* Green */
     border: none;
@@ -15,7 +12,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 4px 8px;
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
@@ -40,4 +37,8 @@
 #title
 {
     color: #FF3838;
+}
+mat-card
+{
+    cursor: pointer;
 }

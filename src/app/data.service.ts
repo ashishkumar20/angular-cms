@@ -2,20 +2,25 @@ import { Injectable} from '@angular/core';
 import { ajax } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
 import { Http } from '@angular/http';
+import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http'
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-httpdata;
   constructor(private http: Http) { }
-/*ngOnInit(){
-this.httpdata = this.http.get("https://jsonplaceholder.typicode.com/posts").
-pipe(map((response) => response.json())).
-subscribe(
-(data) => { return this.showData(data); }
-)
+ private viewPostUrl = 'http://192.168.20.68/comment/viewcomments';
+ private viewCommentUrl = 'http://jsonplaceholder.typicode.com/posts';
 
-}
-showData(data){ return data;}
-*/
+ getPosts(){
+    
+    return this.http.get(`${this.viewCommentUrl}`);
+  }
+  getComments(){
+
+    return this.http.get(`${this.viewCommentUrl}`);
+  }
+  
+  
+  
 }

@@ -1,8 +1,7 @@
-<div id="header">
+
   <h1 id="author_name">{{Name}}</h1>
-</div>
-<div id="list">
-  <ol>
-    <li *ngFor="let i of posts" id="lists" [routerLink]="['/fullpost']">{{i}}</li>
-  </ol>
-</div>
+  <mat-card *ngFor="let data of httpdata" [routerLink]="['/fullpost']" (click)="onSelect(data.id)">
+    <h3 id="title">{{data.id}}{{data.title}}</h3>
+  </mat-card>
+  
+  <router-outlet></router-outlet>

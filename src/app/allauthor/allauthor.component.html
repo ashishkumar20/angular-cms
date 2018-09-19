@@ -1,0 +1,3 @@
+<mat-card *ngFor="let data of httpdata">
+    <h3 id="title" [routerLink]="['/all-posts']"[queryParams]="data">{{data.name}}</h3>
+  </mat-card>

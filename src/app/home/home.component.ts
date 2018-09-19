@@ -3,6 +3,7 @@ import { ajax } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
 import { Http } from '@angular/http';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/data.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,16 +11,34 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
   title = 'angular-cms';
-  constructor(private http: Http) { }
   httpdata;
+
+  constructor(private data: DataService,
+    private route: Router) { }
+
   ngOnInit() {
-    this.http.get("https://jsonplaceholder.typicode.com/posts").
-      pipe(map((response) => response.json())).
-      subscribe(
-      (data) => { this.displaydata(data); }
-      )
+    this.displaydata();
+
   }
-  displaydata(data) { this.httpdata = data; }
+  displaydata() {
+    this.data.getPosts().
+      pipe(map((response) => response.json())).
+      subscribe((posts) => {
+        this.httpdata = posts;
+      });
+  }
+
+
+  navigate() {
+    this.route.navigate(['fullpost'], { queryParams: this.httpdata.id });
+    // '/fullpost'
+  }
+
+  getId(id) {
+
+  }
+
+
 
 
 

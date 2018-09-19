@@ -1,10 +1,10 @@
 <!-- The content below is only a placeholder and can be replaced.-->
 
-<div id="header">
-  <button class="button button1" [routerLink]="['/createpost']">CREATE POST</button>
-  <button class="button button2">ALL AUTHOR</button>
+<div id="main">
+  <button class="button button1" [routerLink]="['/createpost']" [queryParams]="data.id">CREATE POST</button>
+  <button class="button button2" [routerLink]="['/app-allauthor']">ALL AUTHOR</button>
 </div>
 <mat-card *ngFor="let data of httpdata">
-  <h3 id="title" (click)="dataToBeTransferred()" [routerLink]="['/fullpost']">{{data.id}} {{data.title}}</h3>
-  <p id="name">{{data.name}}</p>
+  <h3 id="title" (click)="navigate()" >{{data.id}} {{data.title}}</h3>
+  <p id="name">{{data.id}}</p>
 </mat-card>
