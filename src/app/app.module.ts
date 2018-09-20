@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { MatCardModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreatepostComponent } from './createpost/createpost.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -11,7 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { AllauthorComponent } from './allauthor/allauthor.component';
 import { CommentComponent } from './comment/comment.component';
 import { CreateauthorComponent } from './createauthor/createauthor.component';
-
+import { MatFormFieldModule, MatInputModule } from '@angular/material';;
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'createpost', component: CreatepostComponent },
@@ -20,9 +22,15 @@ const appRoutes: Routes = [
   { path: 'app-home', component: HomeComponent },
   { path: 'app-allauthor', component: AllauthorComponent },
   { path: 'comment', component: CommentComponent },
-  { path: 'app-createauthor', component:CreateauthorComponent},
+  { path: 'app-createauthor', component: CreateauthorComponent },
   { path: '', redirectTo: '/app-home', pathMatch: 'full' }
 ];
+
+const modules = [
+  MatFormFieldModule,
+  MatInputModule,
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,14 +43,20 @@ const appRoutes: Routes = [
     CreateauthorComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     MatCardModule,
     HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ...modules,
     RouterModule.forRoot(
       appRoutes, { enableTracing: true }
     )
   ],
-  exports: [RouterModule],
+  exports: [RouterModule,
+    ...modules
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

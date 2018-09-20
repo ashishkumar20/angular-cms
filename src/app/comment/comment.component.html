@@ -1,17 +1,51 @@
-<p *ngFor="let data of httpdata">
-<mat-card> {{data.body}}</mat-card>
-</p>
-<div class="container">
-  <form>
-    <div class="row">
-      <div class="col-75">
-        <textarea id="post" name="post" placeholder="Write something.." style="height:200px"></textarea>
-      </div>
-    </div>
-    <div class="row">
-      <input type="submit" value="POST">
-      <input type="submit" value="CANCEL" [routerLink]="['/fullpost']">
-    </div>
-  </form>
+<!-- <html xmlns="http://www.w3.org/1999/xhtml">
 
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title></title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
+
+  <!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+<!-- </head>
+
+<body>
+  <div id="wrapper">
+    <div id="page">
+      <p *ngFor="let data of httpdata">
+        <mat-card> {{data.body}}</mat-card>
+      </p>
+      <div class="container">
+        <form>
+          <div class="row">
+            <form class="example-form ">
+              <mat-form-field>
+                <input matInput placeholder="Simple placeholder" required>
+              </mat-form-field>
+            </form>
+          </div>
+          <div class="row">
+            <input type="submit" value="POST">
+            <input type="submit" value="CANCEL" [routerLink]="['/fullpost']">
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html> -->
+
+<div>
+  <mat-card *ngFor="let data of httpdata">{{data.body}}</mat-card>
 </div>
+<form class="example-form">
+<mat-form-field class="example-full-width">
+  <textarea matInput placeholder="Leave a comment"></textarea>
+</mat-form-field>
+</form>
