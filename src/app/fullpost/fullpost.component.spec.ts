@@ -8,9 +8,9 @@ describe('FullpostComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FullpostComponent ]
+      declarations: [FullpostComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

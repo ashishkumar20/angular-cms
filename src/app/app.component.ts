@@ -9,8 +9,8 @@ import { fromEvent } from 'rxjs';
 export class AppComponent {
 
   constructor() { }
-  
-   ngOnInit() {
-  
-}
+
+  ngOnInit() {
+
+  }
 }

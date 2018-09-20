@@ -1,17 +1,19 @@
 <div class="container">
-  <form>
+  <form method="POST" action="http://192.168.20.68/api/v1/authors">
     <div class="row">
       <div class="col-25">
         <label for="name">Name</label>
       </div>
       <div class="col-75">
-        <select id="name" name="name">
-          <option>Shalini</option>
-          <option>Tiwari</option>
-        </select>
+        <input type="text" id="name" name="name" placeholder="Your Name..">
       </div>
-      <div class="col-65">
-        <input type="submit" value="NEW USER" [routerLink]="['/app-createauthor']">
+    </div>
+    <div class="row">
+      <div class="col-25">
+        <label for="email">Email</label>
+      </div>
+      <div class="col-75">
+        <input type="email" id="email" name="email" placeholder="Your Email Id..">
       </div>
     </div>
     <div class="row">

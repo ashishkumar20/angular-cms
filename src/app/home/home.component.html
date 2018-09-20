@@ -4,7 +4,11 @@
   <button class="button button1" [routerLink]="['/createpost']" [queryParams]="data.id">CREATE POST</button>
   <button class="button button2" [routerLink]="['/app-allauthor']">ALL AUTHOR</button>
 </div>
-<mat-card *ngFor="let data of httpdata">
-  <h3 id="title" (click)="navigate()" >{{data.id}} {{data.title}}</h3>
-  <p id="name">{{data.id}}</p>
+
+<mat-card *ngFor="let data of httpdata ">
+
+  <h3 id="title" (click)="navigate(data?.id)">{{data?.id}}{{data?.title}}</h3>
+  <!-- *ngIf="data.index[userId'] === obj[index].id" -->
+  <!-- {{obj[index].name}} -->
+  <p id="name">{{name?.name}}</p>
 </mat-card>

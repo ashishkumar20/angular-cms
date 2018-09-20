@@ -1,18 +1,17 @@
 <p *ngFor="let data of httpdata">
-{{data.id}} {{data.title}}
+  <mat-card> {{data.body}}</mat-card>
 </p>
 <div class="container">
-    <form>
-      <div class="row">
-        <div class="col-75">
-          <textarea id="post" name="post" placeholder="Write something.." style="height:200px"></textarea>
-        </div>
+  <form>
+    <div class="row">
+      <div class="col-75">
+        <textarea id="post" name="post" placeholder="Write something.." style="height:200px"></textarea>
       </div>
-      <div class="row">
-          <input type="submit" value="POST">
-        <input type="submit" value="CANCEL">
-      </div>
-    </form>
-    
-  </div>
- 
+    </div>
+    <div class="row">
+      <input type="submit" value="POST">
+      <input type="submit" value="CANCEL" [routerLink]="['/fullpost']">
+    </div>
+  </form>
+
+</div>

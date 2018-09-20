@@ -1,7 +1,7 @@
+<h1 id="author_name">
+  {{Name}}</h1>
+<mat-card *ngFor="let data of httpdata" [routerLink]="['/fullpost']" (click)="onSelect(data?.id)">
+  <h3 id="title">{{data?.id}}{{data?.title}}</h3>
+</mat-card>
 
-  <h1 id="author_name">{{Name}}</h1>
-  <mat-card *ngFor="let data of httpdata" [routerLink]="['/fullpost']" (click)="onSelect(data.id)">
-    <h3 id="title">{{data.id}}{{data.title}}</h3>
-  </mat-card>
-  
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>

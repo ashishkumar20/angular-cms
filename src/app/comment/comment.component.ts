@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ajax } from 'rxjs/ajax';
 import { map } from 'rxjs/operators';
 import { Http } from '@angular/http';
+import { DataService } from 'src/app/data.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-comment',
   templateUrl: './comment.component.html',
@@ -9,14 +11,23 @@ import { Http } from '@angular/http';
 })
 export class CommentComponent implements OnInit {
 
-  constructor(private http: Http) { }
+  constructor(private data: DataService, private route: ActivatedRoute) { }
   httpdata;
+  id;
   ngOnInit() {
-    this.http.get("https://192.168.20.68/comment/viewcomments").
-      pipe(map((response) => response.json())).
-      subscribe(
-        (data) => { this.displaydata(data); }
-      )
+    this.route.queryParams.
+      subscribe((json) => {
+        this.id = json['postid'];
+        console.log('idofuser', json);
+        this.getComment();
+      });
+
   }
-  displaydata(data) { this.httpdata = data; }
+  getComment() {
+    this.data.getPost(`http://jsonplaceholder.typicode.com/post/${this.id}/comments`).
+      pipe(map((response) => response.json())).
+      subscribe((data) => { this.httpdata = data });
+
+  }
+
 }

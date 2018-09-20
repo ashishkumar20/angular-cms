@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { DataService} from './data.service';
+import { DataService } from './data.service';
+import { NgModule, Component } from '@angular/core';
 import { MatCardModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
 import { CreatepostComponent } from './createpost/createpost.component';
@@ -13,15 +13,21 @@ import { AllauthorComponent } from './allauthor/allauthor.component';
 import { CommentComponent } from './comment/comment.component';
 import { FormsModule } from '@angular/forms';
 
+
+// { path:'fulpost', component:FullpostComponent},
+
+import { CreateauthorComponent } from './createauthor/createauthor.component';
+
 const appRoutes: Routes = [
-  { path: '', component:HomeComponent},
-  // { path:'fulpost', component:FullpostComponent},
-  { path: 'createpost', component:CreatepostComponent},
+
+  { path: '', component: HomeComponent },
+  { path: 'createpost', component: CreatepostComponent },
   { path: 'fullpost', component: FullpostComponent },
   { path: 'all-posts', component: AllPostsComponent },
   { path: 'app-home', component: HomeComponent },
-  { path: 'app-allauthor', component:AllauthorComponent},
-  { path: 'comment', component:CommentComponent},
+  { path: 'app-allauthor', component: AllauthorComponent },
+  { path: 'comment', component: CommentComponent },
+  { path: 'app-createauthor', component: CreateauthorComponent },
   { path: '', redirectTo: '/app-home', pathMatch: 'full' }
 ];
 @NgModule({
@@ -32,7 +38,8 @@ const appRoutes: Routes = [
     FullpostComponent,
     HomeComponent,
     AllauthorComponent,
-    CommentComponent
+    CommentComponent,
+    CreateauthorComponent
   ],
   imports: [
     BrowserModule,
