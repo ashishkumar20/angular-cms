@@ -30,41 +30,17 @@ export class HomeComponent implements OnInit {
         this.httpdata = posts;
 
       });
-    //   this.data.getPost(`http://jsonplaceholder.typicode.com/users`).
-    //   pipe(map((author)=> author.json())).
-    //   subscribe((json)=>{
-    //     this.name=json;
-    //     console.log('nameinfunction',json);
-
-    // //   })
-    // //   console.log('user',this.name);
-
-    // console.log('name',this.name);
-
-    //   // let merge= Object.assign(this.httpdata,this.obj);
-    // // for(let keys of this.httpdata){
-    // //   // if(keys==){
-
-    //   })
-
-
+   
 
 
   }
 
 
   navigate(id) {
-    this.id
     this.route.navigate(['fullpost'], { queryParams: { postid: id } });
     // '/fullpost'
   }
-  // this.http.get("https://jsonplaceholder.typicode.com/posts").
-  // pipe(map((response) => response.json())).
-  // subscribe(
-  // (data) => { this.displaydata(data); }
-  // )
-  // }
-  // displaydata(data) { this.httpdata = data; }
+
 }
 
 

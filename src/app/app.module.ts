@@ -3,6 +3,7 @@ import { DataService } from './data.service';
 import { NgModule, Component } from '@angular/core';
 import { MatCardModule } from '@angular/material';
 import { HttpModule } from '@angular/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreatepostComponent } from './createpost/createpost.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -11,13 +12,14 @@ import { FullpostComponent } from './fullpost/fullpost.component';
 import { HomeComponent } from './home/home.component';
 import { AllauthorComponent } from './allauthor/allauthor.component';
 import { CommentComponent } from './comment/comment.component';
-import { FormsModule } from '@angular/forms';
+
 
 
 // { path:'fulpost', component:FullpostComponent},
 
 import { CreateauthorComponent } from './createauthor/createauthor.component';
-
+import { MatFormFieldModule, MatInputModule } from '@angular/material';;
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 const appRoutes: Routes = [
 
   { path: '', component: HomeComponent },
@@ -30,6 +32,12 @@ const appRoutes: Routes = [
   { path: 'app-createauthor', component: CreateauthorComponent },
   { path: '', redirectTo: '/app-home', pathMatch: 'full' }
 ];
+
+const modules = [
+  MatFormFieldModule,
+  MatInputModule,
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,15 +50,20 @@ const appRoutes: Routes = [
     CreateauthorComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
     MatCardModule,
     HttpModule,
     FormsModule,
+    ReactiveFormsModule,
+    ...modules,
     RouterModule.forRoot(
       appRoutes, { enableTracing: true }
     )
   ],
-  exports: [RouterModule],
+  exports: [RouterModule,
+    ...modules
+  ],
   providers: [DataService],
   bootstrap: [AppComponent]
 })

@@ -1,17 +1,9 @@
-<p *ngFor="let data of httpdata">
-  <mat-card> {{data.body}}</mat-card>
-</p>
-<div class="container">
-  <form>
-    <div class="row">
-      <div class="col-75">
-        <textarea id="post" name="post" placeholder="Write something.." style="height:200px"></textarea>
-      </div>
-    </div>
-    <div class="row">
-      <input type="submit" value="POST">
-      <input type="submit" value="CANCEL" [routerLink]="['/fullpost']">
-    </div>
-  </form>
 
-</div>
+<div>
+  <mat-card *ngFor="let data of httpdata">{{data.body}}</mat-card>
+</div><br/>
+<br/>
+  <div>
+    <input id="text1" placeholder="comment...."/>
+    <input id/>
+  </div>

@@ -4,12 +4,14 @@ import { map } from 'rxjs/operators';
 import { Http } from '@angular/http';
 import { DataService } from 'src/app/data.service';
 import { ActivatedRoute } from '@angular/router';
+import {FormBuilder, FormGroup} from '@angular/forms';
 @Component({
   selector: 'app-comment',
   templateUrl: './comment.component.html',
   styleUrls: ['./comment.component.css']
 })
 export class CommentComponent implements OnInit {
+  options: FormGroup;
 
   constructor(private data: DataService, private route: ActivatedRoute) { }
   httpdata;

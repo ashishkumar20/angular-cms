@@ -1,14 +1,44 @@
-<!-- The content below is only a placeholder and can be replaced.-->
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-<div id="main">
-  <button class="button button1" [routerLink]="['/createpost']" [queryParams]="data.id">CREATE POST</button>
-  <button class="button button2" [routerLink]="['/app-allauthor']">ALL AUTHOR</button>
-</div>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
+</head>
 
-<mat-card *ngFor="let data of httpdata ">
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1>Communication Management System</h1>
+			</div>
+			<div id="menu">
+				<ul>
+					<li>
+						<a accesskey="1" title="" [routerLink]="['/app-home']">Homepage</a>
+					</li>
+					<li>
+						<a accesskey="2" title="" [routerLink]="['/createpost']">CreatePost</a>
+					</li>
+					<li>
+						<a accesskey="3" title="" [routerLink]="['/app-allauthor']">AllAuthor</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="page">
+			<mat-card *ngFor="let data of httpdata">
+				<h2 id="title" (click)="navigate(data?.id)" [routerLink]="['/fullpost']">{{data?.id}}. {{data?.title}}</h2>
+			</mat-card>
+		</div>
+		<div id="three-column">
 
-  <h3 id="title" (click)="navigate(data?.id)">{{data?.id}}{{data?.title}}</h3>
-  <!-- *ngIf="data.index[userId'] === obj[index].id" -->
-  <!-- {{obj[index].name}} -->
-  <p id="name">{{name?.name}}</p>
-</mat-card>
+		</div>
+		<div id="footer">
+		</div>
+	</div>
+</body>
+
+</html>

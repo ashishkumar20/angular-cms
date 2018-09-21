@@ -1,25 +1,56 @@
-<a [routerLink]="['/app-home']" routerLinkActive="active">
-  <b>&lArr;</b>
-</a>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
-<div>
-  <h2 id="name">Sample</h2>
-  <form>
-    <div class="row">
-      <label id="posttitle">{{post?.title}}</label>
-      <button class="button button2" (click)="navigate(post?.userId)" [routerLink]="['/all-posts']">ALL POST</button>
-    </div>
-    <div class="row">
-      <div class="col-25">
-        <label for="post">POST</label>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title></title>
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
+
+  <!--[if IE 6]>
+<link href="default_ie6.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="header">
+      <div id="logo">
+        <h2>Author Name</h2>
+        <br>
+        <h1>{{post?.title}}</h1>
       </div>
-      <div class="col-75">
-        <label id="post" name="post" style="height:200px">{{post?.body}}</label>
+      <div id="menu">
+        <ul>
+          <li>
+            <a accesskey="3" title="" (click)="navigate(post?.userId)"[routerLink]="['/all-posts']">AllPost</a>
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="row">
-      <input type="submit" value="COMMENT" (click)="navigateComment(post?.id)" routerLink="/comment">
+    <div id="page">
+      <div class="container">
+        <form>
+          <div class="row">
+            <div class="col-25">
+              <label for="post">{{post?.body}}</label>
+            </div>
+           
+          </div>
+        </form>
+        <router-outlet></router-outlet>
+      </div>
     </div>
-  </form>
-  <router-outlet></router-outlet>
-</div>
+    <div id="three-column">
+      <input type="submit" value="COMMENT" (click)="myFunction(post?.id)">
+      <div id="comment">
+        <app-comment></app-comment>
+      </div>
+    </div>
+    <div id="footer">
+    </div>
+  </div>
+
+</body>
+
+</html>

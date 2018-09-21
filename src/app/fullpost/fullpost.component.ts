@@ -38,10 +38,16 @@ export class FullpostComponent implements OnInit {
     // '/allllpost'
   }
 
-  navigateComment(id) {
-    this.route1.navigate(['comment'], { queryParams: { postid: id } });
-    // '/app-comment'
-  }
 
 
+  myFunction(id) {
+    // this.route1.navigate(['comment'], { queryParams: { postid: id } });
+    //'comment'
+    var x = document.getElementById("comment");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
 }

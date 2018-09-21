@@ -13,7 +13,7 @@ export class AllauthorComponent implements OnInit {
   constructor(private http: Http) { }
   httpdata;
   ngOnInit() {
-    this.http.get("http://192.168.20.44:8080/api/v1/authors").
+    this.http.get("http://jsonplaceholder.typicode.com/users").
       pipe(map((response) => response.json())).
       subscribe(
       (data) => { this.displaydata(data); }

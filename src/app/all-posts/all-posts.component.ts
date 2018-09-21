@@ -29,9 +29,12 @@ export class AllPostsComponent implements OnInit {
   }
 
   getPosts() {
-    this.json = this.DataFromService.getPost(`http://jsonplaceholder.typicode.com/user/${this.id}/posts`).
+     this.DataFromService.getPost(`http://jsonplaceholder.typicode.com/user/${this.id}/posts`).
       pipe(map((response) => response.json())).
       subscribe((data: Array<Object>) => { this.httpdata = data });
+      this.DataFromService.getPost(`http://jsonplaceholder.typicode.com/users/${this.id}`).
+      pipe(map((response)=> response.json() )).
+      subscribe((data)=>this.json=data)
   }
 
   onSelect(id){
