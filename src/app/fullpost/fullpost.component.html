@@ -42,11 +42,27 @@
       </div>
     </div>
     <div id="three-column">
-      <input type="submit" value="COMMENT" (click)="myFunction(post?.id)">
-      <div id="comment">
-        <app-comment></app-comment>
-      </div>
-    </div>
+      
+      
+    
+    <button class="accordion" (click)="myFunction(post?.id)">Submit</button>
+<div class="panel">
+
+<div>
+    <mat-card *ngFor="let data of httpdata">
+      <h3>{{data.name}}</h3>
+      <h2>{{data.body}}</h2>
+    </mat-card>
+  </div><br/>
+  <br/>
+    <form #comment="ngForm" (ngSubmit)="postComment(comment.value)">
+      <input type="text" class="text1" name="name" placeholder="Name.." ngModel>
+      <input type="textarea" class="text1" name="body" placeholder="comment...."ngModel>
+      <input type="submit" id="button"  value="Submit">
+    </form>
+  
+ </div>
+</div>
     <div id="footer">
     </div>
   </div>

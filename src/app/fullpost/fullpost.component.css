@@ -10,7 +10,7 @@ input[type=text], select, textarea {
 label {
 	font-family: 'Oswald', sans-serif;
     padding: 15px 32px;
-    text-align: center;
+
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
@@ -55,7 +55,10 @@ input[type=submit]:hover {
     width: 100%;
     margin-top: 6px;
     font-family: 'Oswald', sans-serif;
-    text-transform: capitalize;
+	text-transform: capitalize;
+	line-height: 1.25;
+
+	text-align: left;
 }
 
 .col-75 {
@@ -461,7 +464,82 @@ mat-card
 	display: none;
 
 }
+mat-card
+{
+	text-transform: capitalize;
+	font-family: 'Oswald', sans-serif;
+	line-height: 1.5;
+}
+.example-form {
+	min-width: 150px;
+	max-width: 500px;
+	width: 100%;
+  }
+  
+  .example-full-width {
+	width: 100%;
+  }
+  .text1{
+      height: 50px;
+      border: none;
+      border-bottom: 2px solid navy;
+      position: sticky;
+      bottom: 0px;
+      width: 1100px;
+      
+  }
+  #button {
+    display: block;
+    margin-top: 20px;
+    padding: 7px 20px;
+    background:black;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    float: right;
+    font-family:'Oswald',sans-serif; 
+  }
+  h2{
+    font-size: 15px;
+    color: black;
+  }
+  .accordion {
+    background:black;
+	color: white;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-family: 'Oswald',sans-serif;
+    cursor: pointer;
+    padding: 7px 20px;
+    width: 25%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
 
+.accordion:after {
+    content: '\02C4';
+    color: #777;
+    font-weight: bolder;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\02C5";
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+  
+  
 
 
 
