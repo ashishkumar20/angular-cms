@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
         this.httpdata = posts;
 
       });
-   
+
 
 
   }

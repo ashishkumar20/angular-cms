@@ -292,8 +292,7 @@ hr {
 #menu a
 {
 	display: block;
-	margin-left: 1px;
-	padding: 7px 0px 7px 30px;
+	padding: 14px 16px;
 	letter-spacing: 1px;
 	text-decoration: none;
 	text-align: center;
@@ -303,11 +302,16 @@ hr {
 	font-weight: 300;
 	color: #FFFFFF;
 }
-
-#menu a:hover, #menu .current_page_item a
+ #menu .current_page_item a
 {
 	text-decoration: none;
-	border-radius: 5px;
+	background-color: #2E2E2E;
+	color: #FFFFFF;
+}
+
+.active,#menu a:hover
+{
+	background-color: #2E2E2E;
 	color: #FFFFFF;
 }
 
@@ -489,8 +493,9 @@ mat-card
       
   }
   #button {
+	border: none;
     display: block;
-    margin-top: 20px;
+    margin-top: -20px;
     padding: 7px 20px;
     background:black;
     text-decoration: none;

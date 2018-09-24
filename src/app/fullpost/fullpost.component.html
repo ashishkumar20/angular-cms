@@ -23,46 +23,54 @@
       <div id="menu">
         <ul>
           <li>
-            <a accesskey="3" title="" (click)="navigate(post?.userId)"[routerLink]="['/all-posts']">AllPost</a>
+            <a accesskey="1" title="" [routerLink]="['/app-home']">Homepage</a>
+          </li>
+          <li>
+            <a accesskey="2" title="" [routerLink]="['/createpost']">CreatePost</a>
+          </li>
+          <li>
+            <a accesskey="4" title="" [routerLink]="['/app-createauthor']">CreateAuthor</a>
+          </li>
+          <li>
+            <a accesskey="3" title="" [routerLink]="['/app-allauthor']">AllAuthor</a>
           </li>
         </ul>
       </div>
     </div>
     <div id="page">
+      <button id="button" (click)="navigate(post?.userId)" [routerLink]="['/all-posts']">AllPost</button>
+      <br>
+      <br>
       <div class="container">
         <form>
           <div class="row">
             <div class="col-25">
               <label for="post">{{post?.body}}</label>
             </div>
-           
           </div>
         </form>
         <router-outlet></router-outlet>
       </div>
     </div>
     <div id="three-column">
-      
-      
-    
     <button class="accordion" (click)="myFunction(post?.id)">Submit</button>
-<div class="panel">
+      <div class="panel">
+        <div>
+          <mat-card *ngFor="let data of httpdata">
+            <h3>{{data.name}}</h3>
+            <h2>{{data.body}}</h2>
+          </mat-card>
+        </div>
+        <br/>
+        <br/>
+        <form #comment="ngForm" (ngSubmit)="postComment(comment.value)">
+          <input type="text" class="text1" name="name" placeholder="Name.." ngModel>
+          <input type="textarea" class="text1" name="body" placeholder="comment...." ngModel>
+          <input type="submit" id="button" value="Submit">
+        </form>
 
-<div>
-    <mat-card *ngFor="let data of httpdata">
-      <h3>{{data.name}}</h3>
-      <h2>{{data.body}}</h2>
-    </mat-card>
-  </div><br/>
-  <br/>
-    <form #comment="ngForm" (ngSubmit)="postComment(comment.value)">
-      <input type="text" class="text1" name="name" placeholder="Name.." ngModel>
-      <input type="textarea" class="text1" name="body" placeholder="comment...."ngModel>
-      <input type="submit" id="button"  value="Submit">
-    </form>
-  
- </div>
-</div>
+      </div>
+    </div>
     <div id="footer">
     </div>
   </div>

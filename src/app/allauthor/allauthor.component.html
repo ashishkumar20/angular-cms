@@ -27,13 +27,15 @@
             <a accesskey="2" title="" [routerLink]="['/createpost']">CreatePost</a>
           </li>
           <li>
+            <a accesskey="4" title="" [routerLink]="['/app-createauthor']">CreateAuthor</a>
+          </li>
+          <li>
             <a accesskey="3" title="" [routerLink]="['/app-allauthor']">AllAuthor</a>
           </li>
         </ul>
       </div>
     </div>
     <div id="page">
-        <button class="addbutton" [routerLink]="['/app-createauthor']">+</button>
       <mat-card *ngFor="let data of httpdata">
         <h2 id="title" [routerLink]="['/fullpost']">{{data.id}}. {{data.name}} </h2>
       </mat-card>

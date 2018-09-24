@@ -19,6 +19,7 @@ export class FullpostComponent implements OnInit {
   post;
   id: number;
   ngOnInit() {
+
     // this.getSinglePost(id);
     this.route.queryParams.
     subscribe((json) => {
@@ -39,8 +40,6 @@ export class FullpostComponent implements OnInit {
           })
 
       });
-
-
   }
 
   navigate(id) {
@@ -48,8 +47,6 @@ export class FullpostComponent implements OnInit {
     this.route1.navigate(['all-posts'], { queryParams: { userId: id } });
     // '/allllpost'
   }
-
-
 
   myFunction(id) {
     // this.route1.navigate(['comment'], { queryParams: { postid: id } });
