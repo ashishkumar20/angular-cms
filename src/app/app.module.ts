@@ -11,12 +11,6 @@ import { AllPostsComponent } from './all-posts/all-posts.component';
 import { FullpostComponent } from './fullpost/fullpost.component';
 import { HomeComponent } from './home/home.component';
 import { AllauthorComponent } from './allauthor/allauthor.component';
-import { CommentComponent } from './comment/comment.component';
-
-
-
-// { path:'fulpost', component:FullpostComponent},
-
 import { CreateauthorComponent } from './createauthor/createauthor.component';
 import { MatFormFieldModule, MatInputModule } from '@angular/material';;
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -28,7 +22,6 @@ const appRoutes: Routes = [
   { path: 'all-posts', component: AllPostsComponent },
   { path: 'app-home', component: HomeComponent },
   { path: 'app-allauthor', component: AllauthorComponent },
-  { path: 'comment', component: CommentComponent },
   { path: 'app-createauthor', component: CreateauthorComponent },
   { path: '', redirectTo: '/app-home', pathMatch: 'full' }
 ];
@@ -46,7 +39,6 @@ const modules = [
     FullpostComponent,
     HomeComponent,
     AllauthorComponent,
-    CommentComponent,
     CreateauthorComponent
   ],
   imports: [
@@ -58,7 +50,7 @@ const modules = [
     ReactiveFormsModule,
     ...modules,
     RouterModule.forRoot(
-      appRoutes, { enableTracing: true }
+      appRoutes
     )
   ],
   exports: [RouterModule,

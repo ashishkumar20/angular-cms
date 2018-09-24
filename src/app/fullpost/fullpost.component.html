@@ -53,10 +53,14 @@
       </div>
     </div>
     <div id="three-column">
-    <button class="accordion" (click)="myFunction(post?.id)">Submit</button>
+
+
+
+      <button class="accordion" (click)="myFunction(post?.id)">Submit</button>
       <div class="panel">
+
         <div>
-          <mat-card *ngFor="let data of httpdata">
+          <mat-card *ngFor="let data of htttpdata">
             <h3>{{data.name}}</h3>
             <h2>{{data.body}}</h2>
           </mat-card>

@@ -28,11 +28,7 @@ export class HomeComponent implements OnInit {
       subscribe((posts) => {
         console.log('posts', posts)
         this.httpdata = posts;
-
       });
-
-
-
   }
 
 

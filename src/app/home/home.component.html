@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title></title>
+	<title>{{title}}</title>
 	<meta name="keywords" content="" />
 	<meta name="description" content="" />
 	<link href="http://fonts.googleapis.com/css?family=Oswald" rel="stylesheet" type="text/css" />
@@ -32,6 +32,7 @@
 		<div id="page">
 			<mat-card *ngFor="let data of httpdata">
 				<h2 id="title" (click)="navigate(data?.id)" [routerLink]="['/fullpost']">{{data?.id}}. {{data?.title}}</h2>
+				<p>{{data.author?.name}}</p>
 			</mat-card>
 		</div>
 		<div id="three-column">
