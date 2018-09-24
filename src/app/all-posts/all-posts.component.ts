@@ -38,7 +38,7 @@ export class AllPostsComponent implements OnInit {
   }
 
   onSelect(id){
-    this.router.navigate(['fullpost'],{ queryParams: { postid: id } });
+    this.router.navigate(['fullpost'],{ queryParams: { postid: id },skipLocationChange: true });
     //"fullpost"
   }
 }

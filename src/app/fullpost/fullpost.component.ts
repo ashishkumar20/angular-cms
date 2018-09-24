@@ -31,7 +31,7 @@ export class FullpostComponent implements OnInit {
     this.route.queryParams.
       subscribe((json) => {
         this.id = json['postid'];
-        console.log('idofuser', this.id);
+        console.log('id', this.id);
         this.data.getPost(`http://jsonplaceholder.typicode.com/posts/${this.id}`).
           pipe(map((post) => post.json())).
           subscribe((obj) => {
@@ -44,7 +44,7 @@ export class FullpostComponent implements OnInit {
 
   navigate(id) {
 
-    this.route1.navigate(['all-posts'], { queryParams: { userId: id } });
+    this.route1.navigate(['all-posts'], { queryParams: { userId: id } ,skipLocationChange: true});
     // '/allllpost'
   }
 
@@ -71,7 +71,7 @@ for (i = 0; i < acc.length; i++) {
 getComment() {
   this.data.getPost(`http://jsonplaceholder.typicode.com/post/${this.id}/comments`).
     pipe(map((response) => response.json())).
-    subscribe((data) => { this.httpdata = data });
+    subscribe((data) => { this.httpdata = data;console.log('comment',this.httpdata)});
 
 }
 

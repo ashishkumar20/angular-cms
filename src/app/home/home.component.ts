@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
 
 
   navigate(id) {
-    this.route.navigate(['fullpost'], { queryParams: { postid: id } });
+    this.route.navigate(['fullpost'], { queryParams: { postid: id },skipLocationChange: true });
     // '/fullpost'
   }
 
