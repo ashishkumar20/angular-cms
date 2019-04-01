@@ -37,29 +37,67 @@
     </div>
     <div id="page">
       <div class="container">
-        <form>
-          <div class="row">
-            <div class="col-25">
-              <label for="name">Name</label>
-            </div>
-            <div class="col-75">
-              <input type="text" id="title" name="title" placeholder="Your Name..">
-            </div>
-          </div>
-          <div class="row">
-              <div class="col-25">
-                <label for="title">Email</label>
+        <form [formGroup]="UserFormDetails">
+          <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Full Name</label>
+              <div class="col-sm-10">
+                  <input type="text"  formControlName="name" class="form-control" placeholder="Full Name">
+                  <!-- Validation starts After User Touch Input -->
+                  <div class="messages text-danger" *ngIf="UserFormDetails.controls['name'].status === 'INVALID' && UserFormDetails.controls.name?.touched || submitted">
+                      <!-- Validation Required for First Name -->
+                      <div class="messages text-danger" *ngIf="UserFormDetails.controls.name.errors?.required">
+                          Full Name can't be blank
+                      </div>
+                      <div class="messages text-danger" *ngIf="UserFormDetails.controls['name'].errors?.pattern">
+                          Full Name Must contain only Characters, Numbers, Dots and Spaces
+                      </div>
+                      <div class="messages text-danger" *ngIf="UserFormDetails.controls['name'].hasError('whitespace')"> 
+                          Please Enter Valid Full Name 
+                      </div> 
               </div>
-              <div class="col-75">
-                <input type="text" id="title" name="email" placeholder="Your Email..">
-              </div>
-            </div>
-          
-          <br>
-          <div class="row">
-            <input type="submit" value="CREATE" [routerLink]="['/app-home']">
           </div>
-        </form>
+          </div>
+          <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Mobile Number</label>
+              <div class="col-sm-10">
+                  <input type="text" formControlName="phoneNumber" class="form-control" placeholder="Mobile Number" (keydown.space)="onKeydown($event)">
+                  <!-- Validation starts After User Touch Input -->
+                  <div class="messages text-danger" *ngIf="UserFormDetails.controls['phoneNumber'].status === 'INVALID' && UserFormDetails.controls.phoneNumber?.touched || submitted">
+                      <!-- Validation Required for Phone Number -->
+                      <div class="messages text-danger" *ngIf="UserFormDetails.controls.phoneNumber.errors?.required">
+                          Mobile Number can't be blank
+                      </div>
+                      <div class="messages text-danger" *ngIf="UserFormDetails.controls.phoneNumber.errors?.pattern">
+                          Mobile Number Must be Numeric
+                      </div>
+                      <!-- Validation to have atleast 10 Digits in Phone Number -->
+                      <div class="messages text-danger" *ngIf="UserFormDetails.controls.phoneNumber.errors?.minlength && !UserFormDetails.controls.phoneNumber.errors?.pattern">
+                          Mobile Number must be alteast 10 digits long
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="form-group row">
+              <label class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                  <input type="email" formControlName="emailId" class="form-control" placeholder="Email" (keydown.space)="onKeydown($event)">
+                  <!-- Validation starts After User Touch Input -->
+                  <div class="messages text-danger" *ngIf="UserFormDetails.controls['emailId'].status === 'INVALID' && UserFormDetails.controls.emailId?.touched || submitted">
+                      <!-- Validation Required for Email -->
+                      <div class="messages text-danger" *ngIf="UserFormDetails.controls.emailId.errors?.required">
+                          Email can't be blank
+                      </div>
+                        <!-- Validation for Email Type -->
+                      <div class="messages text-danger" *ngIf="UserFormDetails.controls.emailId.errors?.pattern && !UserFormDetails.controls.emailId.errors?.required">
+                          Invalid Email ID
+                      </div>
+                      <!-- Validation starts After User Dirty Touch Input -->
+                      <!-- <div class="messages text-danger" *ngIf="UserFormDetails.controls['name'].status === 'INVALID' && UserFormDetails.controls.emailId?.touched || submitted">
+                                         </div> -->
+                  </div>
+              </div>
+          </div>
+      </form>
       </div>
     </div>
     <div id="three-column">
