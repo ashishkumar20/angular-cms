@@ -22,7 +22,7 @@ export class DataService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     let body = JSON.stringify(author);
-    return this.http.post('/api/v1/authors/', body, options);
+    return this.http.post('https://jsonplaceholder.typicode.com/posts', body, options);
     // map((res: Response) => res.json());
   }
 
